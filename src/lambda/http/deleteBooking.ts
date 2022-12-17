@@ -1,9 +1,11 @@
 import { APIGatewayProxyEvent, APIGatewayProxyHandler, APIGatewayProxyResult } from 'aws-lambda'
-import { getAllBookings } from '../../businesslogic/bookings'
+import { deleteBooking } from '../../businesslogic/bookings'
 
 export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
-  console.log('Getting all events', event)
-  const response = await getAllBookings()
+  const bookingId = event.pathParameters.bookingId
+  const userId = 'user'
+  
+  const response = await deleteBooking(bookingId, userId)
 
   return {
     statusCode: 201,
@@ -12,7 +14,7 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
       'Access-Control-Allow-Credentials': true
     },
     body: JSON.stringify({
-      message: response
+      item: response
     }) 
   }
 }
