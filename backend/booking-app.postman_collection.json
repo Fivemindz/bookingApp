@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "16767e13-aeac-42fb-9bfb-ac15d6eddcd2",
+		"name": "booking-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12789413"
+	},
+	"item": [
+		{
+			"name": "createBooking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"1111 Main St.\",\r\n    \"city\": \"Midland\",\r\n    \"zipcode\": \"Texas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://3qp1sj1h9d.execute-api.us-east-1.amazonaws.com/dev/bookings",
+					"protocol": "https",
+					"host": [
+						"3qp1sj1h9d",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBooking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"1111 Main St.\",\r\n    \"city\": \"Midland\",\r\n    \"zipcode\": \"Texas\",\r\n    \"confirmed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://3qp1sj1h9d.execute-api.us-east-1.amazonaws.com/dev/bookings/8d26f3b8-46f2-4a5b-a541-6ffc516b5a57",
+					"protocol": "https",
+					"host": [
+						"3qp1sj1h9d",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"bookings",
+						"8d26f3b8-46f2-4a5b-a541-6ffc516b5a57"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBookings",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://3qp1sj1h9d.execute-api.us-east-1.amazonaws.com/dev/bookings",
+					"protocol": "https",
+					"host": [
+						"3qp1sj1h9d",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBookings Unauthorized",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "321",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://3qp1sj1h9d.execute-api.us-east-1.amazonaws.com/dev/bookings",
+					"protocol": "https",
+					"host": [
+						"3qp1sj1h9d",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBooking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://3qp1sj1h9d.execute-api.us-east-1.amazonaws.com/dev/bookings/8d26f3b8-46f2-4a5b-a541-6ffc516b5a57",
+					"protocol": "https",
+					"host": [
+						"3qp1sj1h9d",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"bookings",
+						"8d26f3b8-46f2-4a5b-a541-6ffc516b5a57"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "bookingId",
+			"value": "ede9566d-2d7a-4566-aec8-8af2f688e4fc",
+			"type": "string"
+		}
+	]
+}
